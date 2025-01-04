@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fondo Negro con Barra de Navegación, Imagen y Footer</title>
+  <link rel="icon" type="image/x-icon" href="CapaV2.png">
+  <style>
+
+    p {
+      line-height: 1.25; /* Interlineado de 1.5 veces el tamaño de la fuente */
+    }
+
+    @media screen and (orientation: landscape)
+    {
+      body {
+        background-color: black;
+        margin: 0;
+        display: flex; /* Habilita flexbox para el cuerpo */
+        min-height: 100vh; /* Asegura que el cuerpo ocupe al menos la altura de la ventana */
+        flex-direction: column; /* Alinea los elementos en columna */
+        font-family: ArcadeGamer,Arial, Helvetica, sans-serif;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+        text-align: center;
+        max-height: 20vh;
+        display: flex; /* Añadido para centrar los botones */
+        justify-content: center; /* Añadido para centrar los botones */
+        align-items: center; /* Centra verticalmente los elementos en la navbar */
+        flex-direction: column; /* Mantiene la imagen arriba */
+      }
+
+      .enlaces { /* Nueva clase para los enlaces */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        /* float: none;  Eliminado */
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 1% 1%;
+        text-decoration: none;
+        margin: 0% 1%;
+        font-size: 2vh;
+      }
+
+      .navbar img {
+        display: block;
+        margin: 0 auto;
+        height: auto;
+        padding-top: 0.5%;
+        max-height: 10vh;
+        max-width: 100%;
+      }
+
+      .content {
+        flex: 1; /* Permite que el contenido se expanda para llenar el espacio disponible */
+      }
+
+      .footer {
+        background-color: #333; /* Mismo color que la barra de navegación */
+        color: white;
+        text-align: center;
+        padding: 1% 1%; /* Agrega un padding vertical */
+        position: relative; /* Posicionamiento relativo para el footer */
+        max-height: 10vh;
+      }
+      .footer p{
+        font-size: 1vh;
+      }
+
+      .container { /* Estilos para el contenedor */
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        flex: 1; /* Permite que el contenedor se expanda */
+      }
+
+      .video-container { /* Nueva clase para el div del video */
+        text-align: center;
+        display: flex; /* Añadido para mostrar la imagen y el texto en la misma fila */
+        align-items: center; /* Opcional: centra verticalmente la imagen y el texto */
+      }
+
+      .video-container video { /* Estilo para el video */
+        max-width: 100%;
+        max-height: 60vh;
+        height: auto;
+        padding: 2% 2%;
+      }
+      .video-container p { /* Estilo para el video */
+        font-size: 2vh;
+        max-width: 40vw;
+        max-height: 40vh;
+      }
+
+      .video-container img {
+        padding: 1%;
+        height: auto;
+        padding-top: 0.5%;
+        max-height: 40vh;
+        max-width: 100%;
+      }
+    }
+
+    @media screen and (orientation: portrait)
+    {
+      body {
+        background-color: black;
+        margin: 0;
+        display: flex; /* Habilita flexbox para el cuerpo */
+        min-height: 100vh; /* Asegura que el cuerpo ocupe al menos la altura de la ventana */
+        flex-direction: column; /* Alinea los elementos en columna */
+        font-family: ArcadeGamer,Arial, Helvetica, sans-serif;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+        text-align: center;
+        max-height: 20vh;
+        display: flex; /* Añadido para centrar los botones */
+        justify-content: center; /* Añadido para centrar los botones */
+        align-items: center; /* Centra verticalmente los elementos en la navbar */
+        flex-direction: column; /* Añadido para apilar la imagen y los botones */
+      }
+
+      .navbar a {
+        /* float: none;  Eliminado */
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 1% 1%;
+        text-decoration: none;
+        margin: 0 1%;
+        font-size: 3vw;
+      }
+
+      .navbar img {
+        display: block;
+        margin: 0 auto;
+        height: auto;
+        padding-top: 0.5%;
+        max-height: 100%;
+        max-width: 40vw;
+      }
+
+      .content {
+        flex: 1; /* Permite que el contenido se expanda para llenar el espacio disponible */
+      }
+
+      .footer {
+        background-color: #333; /* Mismo color que la barra de navegación */
+        color: white;
+        text-align: center;
+        padding: 1% 1%; /* Agrega un padding vertical */
+        position: relative; /* Posicionamiento relativo para el footer */
+        max-height: 10vh;
+      }
+      .footer p{
+        font-size: 2vw;
+      }
+
+      .container { /* Estilos para el contenedor */
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        flex: 1; /* Permite que el contenedor se expanda */
+      }
+
+      .video-container { /* Nueva clase para el div del video */
+        text-align: center;
+      }
+
+      .video-container video { /* Estilo para el video */
+        max-width: 90vw;
+        max-height: 100%;
+        height: auto;
+        padding: 2% 0%;
+      }
+
+      .video-container p { /* Estilo para el video */
+        font-size: 3vw;
+        max-width: 80vw;
+        max-height: 40vh;
+      }
+
+      .video-container img {
+        padding: 1%;
+        height: auto;
+        padding-top: 0.5%;
+        max-height: 70vw;
+        max-width: 100%;
+      }
+    }
+
+
+    @font-face {
+      font-family: ArcadeGamer;
+      src: url("ArcadeGamer.ttf") format("truetype");
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <img src="LOGO FINAL.png"/>
+  <div class="enlaces">
+    <a href="index.html">Trailer</a>
+    <a href="SobreElJuego.html">Sobre el juego</a>
+    <a href="Kickstarter.html">Kickstarter</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="video-container">
+    <img src="Poster.png">
+    <div class="texto">
+      <p>Dentro de muy poquito, podréis apuntaros a la campaña de EggQuest en Kickstarter.</p>
+      <p>En esta campaña no solo ayudarás a financiar el proyecto si no que podréis acceder a elementos exclusivos como peluches, la banda sonora en formato físico e incluso ediciones especiales del juego (se añadirán fotos próximamente).</p>
+      <p>El juego estará disponible tanto en formato físico, como en formato digital (más barato), y si todo sale según lo planeado tendremos también versión para PC.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Esta página web es parte de un trabajo universitario, nada de lo que aquí se muestra es un producto real.</p>
+</div>
+
+</body>
+</html>
